@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amo voce</title>
+
+    <style>
+        body{
+    background-color: red;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.painel{
+    padding-top: 10px;
+    height: 500px;
+    background-color: rgb(234, 235, 253);
+    border-radius: 20px;
+    text-align: center;
+}
+
+#sim{
+    width: 60px;
+    height: 40px;
+    border:2px solid white;
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    margin-left: -60px;
+}
+
+#nao{
+    position: absolute;
+    width: 60px;
+    height: 40px;
+    border:2px solid white;
+    background-color: rgb(188, 4, 4);
+    color: white;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+img{
+    border: 2px solid white;
+    border-radius: 100%;
+}
+    </style>
+</head>
+<body>
+    
+    <div class="painel">
+        <h1>Te amo Anna</h1>
+        <img src="amor.jpg" alt="kauan e anna" width="200px" height="200">
+        <h3>Voce gosta de mim?</h3>
+        <button id="sim" onclick="parabens()">amo</button>
+        <button onmouseover="fuja()" id="nao">te odeio</button>
+        
+    </div>
+
+    <script>
+        function fuja(){
+        var botaoNao = document.getElementById("nao")
+
+        var larguraJanela = window.innerWidth;
+        var alturaJanela = window.innerHeight;
+
+        var maxX = larguraJanela - botaoNao.offsetWidth;
+        var maxY = alturaJanela - botaoNao.offsetHeight;
+
+        var aleatorioX = Math.floor(Math.random() *maxX);
+        var aleatorioY = Math.floor(Math.random() *maxY);
+
+        botaoNao.style.left = aleatorioX + "px";
+        botaoNao.style.top = aleatorioY + "px";
+    }
+
+    function parabens(){
+        alert("muito bem")
+    }
+    </script>
+</body>
+</html>
